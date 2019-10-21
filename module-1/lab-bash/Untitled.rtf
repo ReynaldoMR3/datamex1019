@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Ejercicios lab-bash\
+1.- Imprime en consola \'93Hello World\'94\
+echo Hello World\
+\
+2.-Crea un directorio nuevo llamada new_dir\
+mkdir new_dir\
+\
+3.- Elimina ese directorio\
+rmdir new_dir\
+\
+4.- Copia el archivo sed.txt dentro de la carpeta lorem a la carpeta lorem-copy\
+cp sed.txt ../lorem-copy\
+\
+5.- Copia los otros dos archivos de la carpeta loores a la carpeta lorem-copy\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 cp lorem.txt ../lorem-copy | cp at.txt ../lorem-copy\
+\
+6.- Muestra el contenido del archivo sed.txt dentro de la carpeta lorem\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 more sed.txt\
+\
+6.- Muestra el contenido de los archivos at.txt y lorem.txt dentro de la carpeta lorem\
+more at.txt | more lorem.txt\
+\
+7.- Visualiza las primeras 3 lineas del archivo sed.txt dentro de la carpeta lorem-copy\
+head -n3 sed.txt\
+\
+8.- Visualiza las ultimas 3 lineas del archivo sed.txt dentro de la carpeta lorem-copy\
+tail -3 sed.txt\
+\
+9.- A\'f1ade Homo homini lupus. al final del archivo sed.txt dentro de la carpeta lorem-copy\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 echo 'Homo\\nhomini\\nlupus' >> sed.txt\
+\
+10.- Visualiza las ultimas 3 lineas del archivo sed.txt dentro de la carpeta lorem-copy. Deber\'edas ver ahora Homo hom\'ednidos lupus.\
+tail -3 sed.txt\
+\
+12.- Sustituye todas las apariciones de et por ET del archivo at.txt dentro de la carpeta loores a la carpeta lorem-copy\
+sed 's/et/ET/g' at.txt\
+\
+13.- Encuentra el usuario activo en el sistema\
+id -un\
+\
+14.- Encuentra d\'f3nde est\'e1s en tu sistema de ficheros\
+pwd\
+\
+15.- Lista los archivos que terminan por .txt en la carpeta lorem\
+ls *.txt\
+\
+16.- Cuenta el n\'famero de lineas que tiene el archivo sed.txt dentro de la carpeta lorem. Tendr\'e1s que encadenar cat y wc mediante el pipe |\
+cat sed.txt | wc -l sed.txt\
+\
+17.- Cuenta el n\'famero de archivos que empiezan por lorem que est\'e1n en este directorio y en directorios internos\
+ls ../lab-bash/*lorem* | wc\
+\
+18.- Encuentra todas las apariciones de et en at.txt dentro de la carpeta lorem.\
+grep -o 'et' at.txt\
+\
+19.- Cuenta el n\'famero de apariciones del string et en at.txt dentro de la carpeta lorem. Para ello debes obtener solo los string buscados y contar las lineas\
+grep -ri 'et' ../lorem-copy | wc\
+\
+\
+\
+}
