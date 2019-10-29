@@ -171,6 +171,11 @@ def main():
             serpiente.addCubito()
             comida = cubito(comidaRandom(rows, serpiente), color=(0, 255, 0))
 
+        for x in range(len(serpiente.body)):
+            if serpiente.body[x].position in list(map(lambda z:z.position, serpiente.body[x+1:])):
+                print("Perdiste, lograste comer:", len(serpiente.body))
+                serpiente.reset((10,10))
+
         redrawWindow(win)
 
     pass
