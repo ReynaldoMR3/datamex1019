@@ -18,11 +18,16 @@ top_100 = data[0:100].copy()
 top_100_clean = top_100.drop(columns=['album', 'available_markets', 'disc_number', 'explicit', 'external_ids',
                                 'external_urls', 'href', 'is_local', 'preview_url', 'track_number', 'type']).copy()
 
-#Función que obtiene los nombres de la columna artists
-def get_artist_name(df):
-    df['artists'] = [i.get('name') for i in df['artists'][0]]
-    return df
+#list comprehension que obtiene los nombres de la columna artists
+top_100_clean['artists'] = [[i['name'] for i in e] for e in top_100_clean['artists']]
 
-top_100_clean = get_artist_name(top_100_clean)
+#Abriendo la base de datos de kaggle con un data frame
+top_2018 = pd.read_csv('top2018.csv')
 
-print(top_100_clean[['artists','name','popularity']])
+#añadiendo la columna year
+top_2018['year'] = 2018
+
+#Revisando que columnas contiene la base de datos.
+print(top_2018.columns)
+print('')
+print(top_100_clean.columns)
