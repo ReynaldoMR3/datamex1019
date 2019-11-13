@@ -39,3 +39,5 @@ clear_database = cleaning_species(clear_database)
 #print(clear_database.head())
 print(clear_database['Time'].value_counts())
 print(clear_database.columns)
+
+clear_database.to_csv('sharks_clean.csv')
